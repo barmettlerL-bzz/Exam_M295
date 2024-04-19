@@ -1,11 +1,11 @@
 const credentialsManager = (req, res, next) => {
     if (!req.session.token) {
         if (!req.session.authorized) {
-            req.session.authorized = true;
             return res.status(403).header({
                 'WWW-Authenticate': 'Basic realm="Authenticate yourself!"',
             }).send(req.session);
         }
+        req.session.authorized = true;
         try {
             const credentials = globalThis.atob(req.headers.authorization.replace('Basic ', '')).split(':');
             if (credentials[1] === 'm295') {
@@ -29,4 +29,4 @@ const credentialsManager = (req, res, next) => {
     next();
 };
 
-credentialsManager(res, req, next)
+module.exports = credentialsManager
