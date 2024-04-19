@@ -1,3 +1,15 @@
+commit cf29878737ae50b998e46e70509ad69cc048456a
+Author: BarmettlerL-bzz <BarmettlerL@bzz.ch>
+Date:   Fri Apr 19 15:15:34 2024 +0200
+
+    ein paar fixes und dokumentation in den files
+
+commit 06dce46a18f7bb20718824cd0532a55f075e5418
+Author: BarmettlerL-bzz <BarmettlerL@bzz.ch>
+Date:   Fri Apr 19 15:14:47 2024 +0200
+
+    ein paar fixes und dokumentation in den files
+
 commit fb31ce5ef67398f300851b2ec0b3d9a4bbef23a9
 Author: BarmettlerL-bzz <BarmettlerL@bzz.ch>
 Date:   Fri Apr 19 14:50:38 2024 +0200
