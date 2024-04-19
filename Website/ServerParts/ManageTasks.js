@@ -1,5 +1,5 @@
-const postTask = (req, res)=>{
-    const {body} = req;
+const postTask = (req, res, tasks, idCounter)=>{
+    const body = req.body;
     if (body.Titel && body.DueDate) {
         tasks.push({
             ID: idCounter++,
@@ -14,10 +14,10 @@ const postTask = (req, res)=>{
         return res.status(400).send('missing or false set data');
     }
 }
-const getTasks = (req, res)=>{
+const getTasks = (req, res, tasks)=>{
     return res.send(tasks)
 }
-const getID = (req, res)=>{
+const getID = (req, res, tasks)=>{
     const ID = parseInt(req.params.id, 10);
     const target = tasks.find(task => task.ID === ID);
     if (target) {
@@ -26,7 +26,7 @@ const getID = (req, res)=>{
         return res.status(400).send(`There is no task with ID: ${ID}`);
     }
 }
-const putTask = (req, res)=>{
+const putTask = (req, res, tasks)=>{
     const ID = parseInt(req.params.id, 10);
     const target = tasks.find(task => task.ID === ID);
     if (target) {
@@ -48,7 +48,7 @@ const putTask = (req, res)=>{
         return res.status(400).send(`There is no task with ID: ${ID}`);
     }
 }
-const deleteTask = (req, res)=>{
+const deleteTask = (req, res, tasks)=>{
     const ID = req.params.id;
     tasks.map(task => {
         if (task.ID === ID) {

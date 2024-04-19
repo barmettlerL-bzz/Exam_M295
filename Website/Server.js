@@ -13,26 +13,27 @@ app.use(session({
 	secret: 'CatKeyboard',
 }));
 
-const credentialsManager = require('./ServerParts/CredentailsManager');
+const credentailsManager = require('./ServerParts/CredentailsManager');
 const AccountActions = require('./ServerParts/AccountActions')
 const ManageTasks = require('./ServerParts/ManageTasks')
 
-
+// mit JSON kann man sich hier einloggen:
+// benötigt ist passwort und beliebige email
 app.post('/login', AccountActions.login);
 
 app.delete('/logout', AccountActions.logout);
 
 app.get('/verify', AccountActions.verify);
 
-app.get('/tasks', credentialsManager, ManageTasks.getTasks);
+app.get('/tasks', credentailsManager, ManageTasks.getTasks);
 
-app.post('/tasks', credentialsManager, ManageTasks.postTask);
+app.post('/tasks', credentailsManager, ManageTasks.postTask);
 
-app.get('/task/:id', credentialsManager, ManageTasks.getID);
+app.get('/task/:id', credentailsManager, ManageTasks.getID);
 
-app.put('/task/:id', credentialsManager, ManageTasks.putTask);
+app.put('/task/:id', credentailsManager, ManageTasks.putTask);
 
-app.delete('/task/:id', credentialsManager, ManageTasks.deleteTask);
+app.delete('/task/:id', credentailsManager, ManageTasks.deleteTask);
 
 app.listen(port, () => {
 	console.log(`listening on port: ${port}`);

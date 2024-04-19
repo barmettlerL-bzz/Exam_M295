@@ -1,6 +1,5 @@
 const login = (req, res) => {
     try {
-        console.log(req.body)
         if (req.body.email && req.body.password === 'm295') {
             req.session.credentials = {
                 email: req.body.email,

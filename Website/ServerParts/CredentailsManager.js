@@ -1,4 +1,5 @@
 const credentialsManager = (req, res, next) => {
+    console.log(req.session)
     if (!req.session.token) {
         if (!req.session.authorized) {
             return res.status(403).header({
@@ -25,8 +26,7 @@ const credentialsManager = (req, res, next) => {
             }).send(req.session);
         }
     }
-
-    next();
+    return next();
 };
 
 module.exports = credentialsManager
