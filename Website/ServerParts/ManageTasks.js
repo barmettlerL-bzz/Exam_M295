@@ -48,7 +48,7 @@ const putTask = (req, res)=>{
         return res.status(400).send(`There is no task with ID: ${ID}`);
     }
 }
-const deleteTask = (res, req)=>{
+const deleteTask = (req, res)=>{
     const ID = req.params.id;
     tasks.map(task => {
         if (task.ID === ID) {
