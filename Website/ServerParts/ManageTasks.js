@@ -53,14 +53,14 @@ const putTask = (req, res) => {
 };
 
 const deleteTask = (req, res) => {
-	const ID = req.params.id;
-     tasks.map(task => {
-		if (task.ID === ID) {
-			task = undefined
-			return res.send(tasks);
-		}
-	});
-	return res.status(400).send(`There is no task with ID: ${ID}`);
+	const ID = parseInt(req.params.id, 10);
+    let index = tasks.indexOf(tasks.find(task => task.ID === ID));
+    if(index !== -1){
+        tasks.splice(index, 1)
+        return res.send(tasks);
+    }else{
+        return res.status(400).send(`There is no task with ID: ${ID}`);
+    }
 };
 
 module.exports = {
