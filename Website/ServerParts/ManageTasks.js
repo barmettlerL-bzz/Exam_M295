@@ -3,7 +3,7 @@ let idCounter = 0;
 const postTask = (req, res) =>{
 
     const body = req.body;
-    if (body.Titel && body.DueDate) {
+    if (body.Titel && new Date(body.DueDate) > 0){
         tasks.push({
             ID: idCounter++,
             Titel: body.Titel,
@@ -14,7 +14,7 @@ const postTask = (req, res) =>{
         });
         return res.status(201).send(tasks);
     } else {
-        return res.status(400).send('missing or false set data');
+        return res.status(400).send('missing or data invalid');
     }
 }
 const getTasks = (req, res)=>{
@@ -34,7 +34,7 @@ const putTask = (req, res)=>{
     const target = tasks.find(task => task.ID === ID);
     if (target) {
         const index = tasks.indexOf(target);
-        if (req.body.Titel && req.body.DueDate) {
+        if (req.body.Titel && new Date(req.body.DueDate) > 0) {
             tasks[index] = {
                 ID: target.ID,
                 Titel: req.body.Titel,

@@ -1,11 +1,11 @@
-My Exam for the Module 295
+LB für Module 295, Leandro Barmettler
 
-this is a to-do list which runs once and gets deleted if stopped, anyone can login but the need the password. the password is: "m295"
+das ist eine To-do list die gelöscht wird wenn der server stoppt, jeder kann sich einloggen jedoch braucht man das passwort: "m295"
 
-The API's of this server are visible in the Server.js File: (./Website/Server.js)
-And the functions are written in the ServerParts folder: (./Website/ServerParts/)
+Die Api's sind auf Server.js aufzufidnen: (./Website/Server.js)
+die funktionen die genutzt werden auf dem Server sind im ServerParts folder: (./Website/ServerParts/)
 
-The development logs can be found under: (./Website/vcs.txt)
+die development logs können hier aufgefunden werdne: (./Website/vcs.txt)
 
 folgende Testdaten können sie für hoppscotsh verwenden über Import: (./TestDaten.json)
 

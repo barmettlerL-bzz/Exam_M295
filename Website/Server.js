@@ -26,19 +26,20 @@ app.get('/verify', AccountActions.verify);
 
 //Für alle folgede Daten muss man eingeloggt sein
 
-//zeigt alle jetzigen tasks an
+//zeigt alle tasks an
 app.get('/tasks', credentailsManager, ManageTasks.getTasks);
 
-//
-app.post('/tasks', credentailsManager, ManageTasks.postTask);
-
+//zeigt eine task an mit der entsprechenden ID
 app.get('/task/:id', credentailsManager, ManageTasks.getID);
 
+//fügt eine Task hinzu, braucht einen "Titel" und valides "DueDate", Id wird automatisch hinzugefügt.
+app.post('/tasks', credentailsManager, ManageTasks.postTask);
+
+//ersetzt die task mit der neuen task, braucht ebenfalls einen "Titel"
 app.put('/task/:id', credentailsManager, ManageTasks.putTask);
 
+//löscht eine Task mit der ID
 app.delete('/task/:id', credentailsManager, ManageTasks.deleteTask);
-
-
 
 
 app.listen(port, () => {
