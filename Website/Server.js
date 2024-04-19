@@ -5,9 +5,6 @@ const session = require('express-session');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-const tasks = [];
-let idCounter = 0;
-
 app.use(session({
     authorized:false,
 	secret: 'CatKeyboard',
