@@ -1,4 +1,5 @@
 const postTask = (req, res, tasks, idCounter)=>{
+    console.log(req.body)
     const body = req.body;
     if (body.Titel && body.DueDate) {
         tasks.push({
