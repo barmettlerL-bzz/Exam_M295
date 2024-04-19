@@ -1,3 +1,21 @@
+commit a94fc7bd660078559c9cf8fb74cd88ee1abef304
+Author: BarmettlerL-bzz <BarmettlerL@bzz.ch>
+Date:   Fri Apr 19 14:39:50 2024 +0200
+
+    Bug (Server not found 404) fixed
+
+commit a9ed14169b5d9562fb074e474f61f6b846ebcf40
+Author: BarmettlerL-bzz <BarmettlerL@bzz.ch>
+Date:   Fri Apr 19 14:13:48 2024 +0200
+
+    credentailsManager ist nicht das Problem, wird wieder zurückgetan
+
+commit 581b864a00ad03241661566675fcaa4c7f1d229e
+Author: BarmettlerL-bzz <BarmettlerL@bzz.ch>
+Date:   Fri Apr 19 14:11:09 2024 +0200
+
+    credentialsManager bugg, muss gefixt werden, cedentailsManager vorübergehend rausgenommen
+
 commit 21daf74be752d0fc1fa25e6b6be3bbf055e545ac
 Author: BarmettlerL-bzz <BarmettlerL@bzz.ch>
 Date:   Fri Apr 19 13:43:28 2024 +0200

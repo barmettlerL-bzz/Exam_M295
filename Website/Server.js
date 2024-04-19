@@ -15,15 +15,21 @@ const AccountActions = require('./ServerParts/AccountActions')
 const ManageTasks = require('./ServerParts/ManageTasks')
 
 // mit JSON kann man sich hier einloggen:
-// benötigt ist passwort und beliebige email
+// benötigt ist "password" und beliebige "email"
 app.post('/login', AccountActions.login);
 
+//löscht die jetzige session und logt dich damit aus
 app.delete('/logout', AccountActions.logout);
 
+//zeigt deine Logindaten in der Session falls eingelogt, sonst sagt es du bist nicht eingelogt
 app.get('/verify', AccountActions.verify);
 
+//Für alle folgede Daten muss man eingeloggt sein
+
+//zeigt alle jetzigen tasks an
 app.get('/tasks', credentailsManager, ManageTasks.getTasks);
 
+//
 app.post('/tasks', credentailsManager, ManageTasks.postTask);
 
 app.get('/task/:id', credentailsManager, ManageTasks.getID);
@@ -31,6 +37,9 @@ app.get('/task/:id', credentailsManager, ManageTasks.getID);
 app.put('/task/:id', credentailsManager, ManageTasks.putTask);
 
 app.delete('/task/:id', credentailsManager, ManageTasks.deleteTask);
+
+
+
 
 app.listen(port, () => {
 	console.log(`listening on port: ${port}`);
